@@ -11,6 +11,3 @@ public class ApiWeatherApplication {
 	}
 
 }
-
-
-https://geocoding-api.open-meteo.com/v1
