@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/auth :: shell(~{::title}, ~{::.eyebrow}, ~{::.heading}, ~{::.lead}, ~{::.content})}">
+<head>
+    <title>Entrar — Vértice</title>
+</head>
+<body>
+<p class="eyebrow">Portal de acesso</p>
+<h2 class="heading">Login</h2>
+<p class="lead">Digite seus dados para entrar.</p>
+<div class="content">
+    <form class="auth-form" th:action="@{/login}" method="post">
+        <div class="alert alert-error" th:if="${param.error}">
+            Usuário ou senha inválidos.
+        </div>
+        <div class="alert alert-ok" th:if="${param.logout}">
+            Sessão encerrada.
+        </div>
+        <div class="alert alert-ok" th:if="${param.registered} or ${successMessage}" th:text="${successMessage} ?: 'Conta criada. Entre para continuar.'">
+            Conta criada.
+        </div>
+        <div class="alert alert-ok" th:if="${param.reset}">
+            Senha atualizada. Entre com a nova senha.
+        </div>
+
+        <label class="field">
+            <span>Usuário ou e-mail</span>
+            <input type="text" name="username" autocomplete="username" required autofocus>
+        </label>
+        <label class="field">
+            <span>Senha</span>
+            <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <button class="cta" type="submit">Entrar</button>
+        <nav class="auth-links">
+            <a th:href="@{/register}">Criar conta</a>
+            <a th:href="@{/recoverpassword}">Recuperar senha</a>
+        </nav>
+    </form>
+</div>
+</body>
+</html>

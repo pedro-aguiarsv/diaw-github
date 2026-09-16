@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home — Vértice</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body class="app-body">
+    <div class="app-shell">
+        <header class="app-top">
+            <div class="brand">Vértice</div>
+            <form th:action="@{/logout}" method="post">
+                <button class="ghost" type="submit">Sair</button>
+            </form>
+        </header>
+        <section class="hero">
+            <p class="hero-kicker">Página inicial</p>
+            <h1>Bem-vindo, <span th:text="${displayName}">Aluno</span></h1>
+            <p>Login realizado com sucesso. Você está autenticado no sistema.</p>
+        </section>
+        <footer class="meta">
+            <span th:text="${username}">aluno</span>
+            <span th:text="${email}">aluno@vertice.local</span>
+            <a th:if="${isAdmin}" th:href="@{/admin}">Área administrativa</a>
+        </footer>
+    </div>
+</body>
+</html>

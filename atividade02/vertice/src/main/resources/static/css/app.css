@@ -1,0 +1,84 @@
+body.app-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#3b82c4, #1e4d8c);
+}
+
+.app-shell {
+  width: 480px;
+  max-width: 90%;
+  margin: 60px auto;
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e4d8c;
+}
+
+.ghost {
+  border: 1px solid #1e4d8c;
+  background: #fff;
+  color: #1e4d8c;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.ghost:hover {
+  background: #1e4d8c;
+  color: #fff;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  color: #1e4d8c;
+  font-size: 26px;
+  text-align: left;
+}
+
+.hero-kicker {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 13px;
+}
+
+.hero p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.meta {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+  color: #555;
+}
+
+.meta span,
+.meta a {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.meta a {
+  color: #1e4d8c;
+}

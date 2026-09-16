@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="shell(title, eyebrow, heading, lead, content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:replace="${title}">Vértice</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+<body>
+    <div class="box">
+        <h1>Vértice</h1>
+        <p class="subtitle" th:replace="${eyebrow}">Acesso</p>
+        <h2 th:replace="${heading}">Entrar</h2>
+        <p class="texto" th:replace="${lead}">Identifique-se para continuar.</p>
+        <div th:replace="${content}"></div>
+    </div>
+</body>
+</html>

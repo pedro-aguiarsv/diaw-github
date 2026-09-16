@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(#3b82c4, #1e4d8c);
+  color: #222;
+}
+
+.box {
+  width: 380px;
+  max-width: 90%;
+  margin: 60px auto;
+  background: #fff;
+  padding: 28px 24px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  margin: 0 0 4px;
+  text-align: center;
+  color: #1e4d8c;
+  font-size: 32px;
+}
+
+h2,
+.heading {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #333;
+}
+
+.subtitle,
+.eyebrow {
+  margin: 0 0 16px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.texto,
+.lead {
+  margin: 0 0 18px;
+  color: #555;
+  font-size: 14px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.field input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #1e4d8c;
+}
+
+.cta {
+  margin-top: 6px;
+  width: 100%;
+  border: 0;
+  background: #1e4d8c;
+  color: #fff;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cta:hover {
+  background: #163a6b;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+a {
+  color: #1e4d8c;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.alert-ok {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.field-error {
+  margin: 4px 0 0;
+  color: #c0392b;
+  font-size: 12px;
+}
+
+.hint {
+  margin: 4px 0 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.demo-link {
+  display: block;
+  margin-top: 6px;
+  word-break: break-all;
+}
+
+@media (max-width: 420px) {
+  .box {
+    margin: 24px auto;
+  }
+
+  .auth-links {
+    flex-direction: column;
+  }
+}

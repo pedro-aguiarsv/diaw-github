@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin — Vértice</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body class="app-body">
+    <div class="app-shell">
+        <header class="app-top">
+            <div class="brand">Vértice - Admin</div>
+            <form th:action="@{/logout}" method="post">
+                <button class="ghost" type="submit">Sair</button>
+            </form>
+        </header>
+        <section class="hero">
+            <p class="hero-kicker">Área restrita</p>
+            <h1>Administração</h1>
+            <p th:text="'Olá, ' + ${displayName} + '. Esta página só pode ser acessada por administradores.'">Olá, Administrador.</p>
+        </section>
+        <footer class="meta">
+            <span th:text="${username}">admin</span>
+            <a th:href="@{/home}">Voltar</a>
+        </footer>
+    </div>
+</body>
+</html>

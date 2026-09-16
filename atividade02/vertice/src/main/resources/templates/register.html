@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/auth :: shell(~{::title}, ~{::.eyebrow}, ~{::.heading}, ~{::.lead}, ~{::.content})}">
+<head>
+    <title>Registro — Vértice</title>
+</head>
+<body>
+<p class="eyebrow">Novo usuário</p>
+<h2 class="heading">Cadastro</h2>
+<p class="lead">Preencha os campos para criar sua conta.</p>
+<div class="content">
+    <form class="auth-form" th:action="@{/register}" th:object="${form}" method="post">
+        <div class="alert alert-error" th:if="${#fields.hasGlobalErrors()}">
+            <p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+        </div>
+
+        <label class="field">
+            <span>Nome</span>
+            <input type="text" th:field="*{name}" autocomplete="name" required>
+            <p class="field-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+        </label>
+        <label class="field">
+            <span>Usuário</span>
+            <input type="text" th:field="*{username}" autocomplete="username" required>
+            <p class="field-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+        </label>
+        <label class="field">
+            <span>E-mail</span>
+            <input type="email" th:field="*{email}" autocomplete="email" required>
+            <p class="field-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        </label>
+        <label class="field">
+            <span>Senha</span>
+            <input type="password" th:field="*{password}" autocomplete="new-password" required>
+            <p class="hint">Mínimo de 8 caracteres, com letras e números.</p>
+            <p class="field-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+        </label>
+        <label class="field">
+            <span>Confirmar senha</span>
+            <input type="password" th:field="*{confirmPassword}" autocomplete="new-password" required>
+            <p class="field-error" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></p>
+        </label>
+        <button class="cta" type="submit">Registrar</button>
+        <nav class="auth-links">
+            <a th:href="@{/login}">Voltar ao login</a>
+        </nav>
+    </form>
+</div>
+</body>
+</html>
