@@ -1,11 +1,120 @@
-.grade-candidatos { 
-display: grid; 
-grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-gap: 12px; 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    color: #222;
 }
 
-.foto-candidato { 
-width: 100%; 
-aspect-ratio: 161 / 225; 
-object-fit: cover; 
+header {
+    background: #0c4a2a;
+    color: #fff;
+    padding: 18px 24px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+    padding: 16px 24px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.filtros label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+}
+
+.filtros input,
+.filtros select {
+    padding: 6px 8px;
+    font-size: 14px;
+    min-width: 160px;
+}
+
+.filtros button {
+    padding: 8px 16px;
+    background: #0c4a2a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.limpar {
+    padding: 8px 4px;
+    color: #0c4a2a;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.resultado-info,
+.sem-resultado {
+    margin: 0;
+    padding: 14px 24px;
+}
+
+.sem-resultado {
+    color: #666;
+}
+
+.grade-candidatos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    padding: 0 24px 24px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.foto-candidato {
+    width: 100%;
+    aspect-ratio: 161 / 225;
+    object-fit: cover;
+    background: #e6e6e6;
+    display: block;
+}
+
+.sem-foto {
+    display: none;
+    width: 100%;
+    aspect-ratio: 161 / 225;
+    background: #e6e6e6;
+    color: #666;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.card h2 {
+    font-size: 15px;
+    margin: 8px 0 4px;
+}
+
+.card p {
+    margin: 2px 0;
+    font-size: 13px;
+}
+
+.numero {
+    font-weight: bold;
+}
+
+.nome-civil {
+    margin-top: 6px;
+    color: #555;
+    font-size: 12px;
 }
