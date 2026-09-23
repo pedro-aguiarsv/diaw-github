@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"> 
+    <link rel="stylesheet" th:href="@{/css/style.css}"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatos - Eleições 2026 - MG</title>
+    <form method="get" th:action="@{/}" class="filtros"></form>
+</head>
+<body>
+    <header>
+        Candidatos - Eleições 2026 - MG
+    </header>
+
+    <aside>
+        <input type="text" name="texto" th:value="${textoSelecionado}">
+    </aside>
+
+    <select name="cargo">
+        <option value="" th:selected="${cargoSelecionado == ''}">Todos</option>
+        <option th:each="c : ${cargos}"
+                th:value="${c}"
+                th:text="${c}"
+                th:selected="${c == cargoSelecionado}"></option>
+    </select>
+
+    <div class="card" th:each="cand : ${candidatos}"> 
+
+    </div>
+
+    <p class="situacao" th:if="${cand.situacaoCandidatura != null and ! cand.situacaoCandidatura.isBlank()}"
+        th:text="${cand.situacaoCandidatura}">Situação</p>
+
+    <p class="extra" th:if="${cand.idade > 0}">
+        <span th:text = "${cand.idade + ' anos'}">idade</span>
+    </p>
+
+    <p class="extra" th:if="${cand.ocupacao != null and != cand.ocupacao.isBlank()}"
+        th:text="${cand.ocupacao}">Ocupação</p>
+
+    <p class="extra" th:if="${cand.grauInstrucao != null and !cand.grauInstrucao.isBlank()}"
+        th:text="$(cand.grauInstrucao)">Escolaridade</p>
+    
+    <p class="resultado-info">
+        <span th:text="${totalEncontrado}">0</span> candidato(s) encontrado(s)
+    </p>
+
+    <p th:if="${totalEncontrado == 0}" class="sem-resultado">
+        Nenhum candidato encontrado com esses filtros
+    </p>
+
+</body>
+</html>
+
