@@ -1,0 +1,236 @@
+.pagina {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.8rem 1.25rem 2.5rem;
+}
+
+.pagina h1 {
+  color: var(--palha);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 0.35rem;
+}
+
+.subtitulo,
+.demais > p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.subtitulo {
+  margin-bottom: 1.1rem;
+}
+
+.aviso-voto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 0.75rem 1rem;
+  background: var(--pasto);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.aviso-voto p {
+  margin: 0;
+}
+
+.aviso-voto a {
+  color: #fff;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.grade-roca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 0.4rem 0 2.4rem;
+}
+
+.grade-peoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.card {
+  position: relative;
+  background: var(--papel);
+  color: var(--tinta);
+  border: 2px solid #e6d3a8;
+  border-radius: 12px;
+  padding: 0.55rem 0.55rem 0.75rem;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  text-align: center;
+  margin-top: 0.55rem;
+  font-size: 1rem;
+}
+
+.card-roca {
+  border: 4px solid var(--celeiro);
+  box-shadow: 0 0 0 3px #eddcb4;
+  padding-bottom: 0.9rem;
+}
+
+.card-roca h3 {
+  font-size: 1.45rem;
+  margin: 0.75rem 0 0.55rem;
+}
+
+.card .botao {
+  width: 100%;
+  text-align: center;
+}
+
+.selo {
+  position: absolute;
+  top: 1rem;
+  right: 0.85rem;
+  background: var(--celeiro);
+  color: #fff;
+  font-family: var(--fonte-texto), serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.18rem 0.5rem;
+}
+
+.demais {
+  margin-top: 0.4rem;
+}
+
+.demais h2 {
+  color: var(--palha);
+  font-size: 1.7rem;
+}
+
+.total {
+  color: var(--palha);
+  font-size: 1.15rem;
+  margin: 0.2rem 0 1.3rem;
+}
+
+.total strong {
+  font-family: var(--fonte-titulo), serif;
+  font-weight: 400;
+  font-size: 2.15rem;
+  margin-right: 0.3rem;
+}
+
+.placar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.placar-item {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 0.9rem;
+  align-items: center;
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  border: 3px solid transparent;
+}
+
+.placar-lider {
+  border-color: var(--celeiro);
+}
+
+.placar-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.placar-info h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  font-size: 1.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.selo-sair {
+  background: var(--celeiro);
+  color: #fff;
+  font-family: var(--fonte-texto), serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+
+.barra {
+  height: 14px;
+  background: #d5d0c6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  background: var(--madeira);
+  border-radius: 999px;
+}
+
+.placar-lider .barra-preenchida {
+  background: var(--celeiro);
+}
+
+.placar-numeros {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.botao-zerar {
+  margin-top: 1.3rem;
+  background: transparent;
+  color: var(--papel);
+  box-shadow: inset 0 0 0 2px var(--papel);
+}
+
+.vazio {
+  background: var(--papel);
+  color: var(--tinta);
+  text-align: center;
+  border-radius: 12px;
+  padding: 2.4rem 1rem;
+}
+
+.vazio p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 720px) {
+  .aviso-voto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .placar-item {
+    grid-template-columns: 108px 1fr;
+  }
+}
