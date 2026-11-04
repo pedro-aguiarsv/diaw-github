@@ -1,0 +1,63 @@
+@startuml classes-v2
+skinparam shadowing false
+hide circle
+
+class Usuario {
+  id
+  usuario
+  senha
+  nome
+  papel
+  tipoAgente
+}
+class Cliente {
+  rg
+  cpf
+  nome
+  endereco
+  profissao
+}
+class Empregador {
+  entidade
+  rendimento
+}
+class Agente {
+  tipo
+  nome
+  razaoSocial
+}
+class Automovel {
+  matricula
+  ano
+  marca
+  modelo
+  placa
+  tipoProprietario
+}
+class Pedido {
+  dataInicio
+  dataFim
+  valorDiaria
+  valorTotal
+  status
+  observacao
+  parecer
+}
+class ContratoCredito {
+  valorFinanciado
+  numeroParcelas
+  taxaMensal
+  concedidoEm
+}
+
+Usuario "1" -- "0..1" Cliente
+Usuario "1" -- "0..1" Agente
+Cliente "1" *-- "0..3" Empregador
+Cliente "1" -- "0..*" Pedido
+Automovel "1" -- "0..*" Pedido
+Agente "0..1" -- "0..*" Pedido : avalia >
+Agente "1" -- "0..*" ContratoCredito : concede >
+Pedido "1" -- "0..1" ContratoCredito
+Cliente "0..1" -- "0..*" Automovel : possui >
+Agente "0..1" -- "0..*" Automovel : possui >
+@enduml

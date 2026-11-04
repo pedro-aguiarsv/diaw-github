@@ -1,0 +1,46 @@
+@startuml pacotes-v2
+skinparam shadowing false
+skinparam componentStyle rectangle
+
+package "apresentacao" {
+  [React + Vite]
+}
+package "controller" {
+  [AuthController]
+  [ClienteController]
+  [AutomovelController]
+  [PedidoController]
+}
+package "service" {
+  [AuthService]
+  [ClienteService]
+  [AutomovelService]
+  [PedidoService]
+}
+package "repository" {
+  [Spring Data JPA]
+}
+package "model" {
+  [entidades]
+}
+package "security" {
+  [Spring Security]
+}
+database "Supabase PostgreSQL" as db
+
+[React + Vite] --> [AuthController]
+[React + Vite] --> [ClienteController]
+[React + Vite] --> [AutomovelController]
+[React + Vite] --> [PedidoController]
+[AuthController] --> [AuthService]
+[ClienteController] --> [ClienteService]
+[AutomovelController] --> [AutomovelService]
+[PedidoController] --> [PedidoService]
+[AuthService] --> [Spring Security]
+[ClienteService] --> [Spring Data JPA]
+[AutomovelService] --> [Spring Data JPA]
+[PedidoService] --> [Spring Data JPA]
+[AuthService] --> [Spring Data JPA]
+[Spring Data JPA] --> [entidades]
+[Spring Data JPA] --> db
+@enduml
